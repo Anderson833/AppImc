@@ -2,62 +2,116 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/SpringGreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editPeso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Digite seu Peso:"
-        android:inputType="numberDecimal"
-        android:maxLength="5"
-        android:textSize="24sp"
+
+    <View
+        android:id="@+id/ViewPrincipal"
+        style="@style/estiloFundo"
+        android:layout_width="330dp"
+        android:layout_height="550dp"
+        android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editAltuta"
-        android:layout_width="273dp"
+    </View>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+           android:id="@+id/linearCampos"
+           android:gravity="center"
+           android:layout_width="300dp"
+           android:layout_height="330dp"
+           android:paddingLeft="1dp"
+           android:layout_marginTop="60dp"
+           android:layout_marginRight="5dp"
+           android:orientation="vertical"
+           app:layout_constraintTop_toTopOf="@id/ViewPrincipal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="230dp"
+            android:layout_height="105dp"
+            android:src="@drawable/logoimc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/linearCampos">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+           <EditText
+               android:id="@+id/editPeso"
+               style="@style/stytleEdtit_Text"
+               android:hint="Digite seu Peso:"
+               android:maxLength="5"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"/>
+
+           <EditText
+               android:id="@+id/editAltuta"
+               style="@style/stytleEdtit_Text"
+               android:hint="Digite sua Altura:"
+               android:maxLength="4"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="parent" />
+
+
+       </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearBotao"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal"
+        android:layout_width="270dp"
+        android:background="@color/DarkGreen"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearCampos">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/calc"
+            style="@style/styleBotao"
+            android:text="Calcular"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/linearBotao"
+            >
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/limpar"
+            style="@style/styleBotao"
+            android:text="limpar"
+            android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calc">
+        </androidx.appcompat.widget.AppCompatButton>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <TextView
+        android:id="@+id/textResultado"
         android:layout_height="58dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Digite sua Altura:"
-        android:inputType="numberDecimal"
-        android:maxLength="4"
+        android:layout_width="270dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
         android:textSize="24sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPeso" />
+        app:layout_constraintTop_toBottomOf="@+id/linearBotao"
+        />
 
-    <Button
-        android:id="@+id/calc"
-        android:layout_width="168dp"
-        android:layout_height="65dp"
-        android:text="Calcular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAltuta" />
 
-    <Button
-        android:id="@+id/limpar"
-        android:layout_width="164dp"
-        android:layout_height="61dp"
-        android:text="limpar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calc"
-        app:layout_constraintVertical_bias="0.486" />
 </androidx.constraintlayout.widget.ConstraintLayout>
